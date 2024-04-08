@@ -9,7 +9,7 @@ mensaje: .asciiz "Introduce un numero: "
 
 .text
 
-li $t1,10 #El numero que te sacar· del bucle
+li $t1,10 #El numero que te sacar√° del bucle
 
 bucle: 
 li $v0, 4
@@ -22,7 +22,7 @@ move $t0, $v0
 
 beq $t0,$t1, fin_bucle # Si $t0 == $t1 sale del bucle.
 
-j bucle #vuelve a ejecutar el codigo que hay depuÈs de la etiqueta "bucle:".
+j bucle #vuelve a ejecutar el codigo que hay depu√©s de la etiqueta "bucle:".
 
 fin_bucle: # Esta etiqueta equivale a salir del bucle.
 li $v0, 10
