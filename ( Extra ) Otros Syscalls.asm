@@ -1,3 +1,7 @@
+#----------------------------------------------------------------------
+# En este codigo aprende a utiliar algunos de los syscalls que existen.
+#----------------------------------------------------------------------
+
 .data
 
 Menu: .asciiz "\n\nMENU:"
@@ -12,7 +16,7 @@ Op8: .asciiz "\n8. Random double."
 Op9: .asciiz "\n9. MIDI out."
 Op10: .asciiz "\n10. Binario."
 Op0: .asciiz "\n0. Salir."
-Intr:  .asciiz "\n\nIntroduce una opción: "
+Intr:  .asciiz "\n\nIntroduce una opciÃ³n: "
 
 #---------------------------------------------
 mensajee: .asciiz "\nIntroduce un entero: "
