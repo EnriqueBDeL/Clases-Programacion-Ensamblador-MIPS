@@ -1,6 +1,6 @@
 #--------------------------------------------------------------
-# En este cÛdigo, el programa suma cinco n˙meros enteros, 
-# utilizando registros y la pila para manejar par·metros. 
+# En este c√≥digo, el programa suma cinco n√∫meros enteros, 
+# utilizando registros y la pila para manejar par√°metros. 
 # Luego, muestra el resultado en pantalla.
 #
 # Suma: 5 + 3 + 2 + 7 + 1 = 18
@@ -19,14 +19,14 @@
     li   $a2, 2      
     li   $a3, 7      
 
-    # Guardar el quinto par·metro en la pila
-    li   $t0, 1        # Quinto par·metro 
+    # Guardar el quinto par√°metro en la pila
+    li   $t0, 1        # Quinto par√°metro 
     addi $sp, $sp, -4  # Reservar espacio en la pila.              # Tambien puedes ponerlo como --> 'subi $sp, $sp, 4' 
-    sw   $t0, 0($sp)   # Guardar el quinto par·metro en la pila
+    sw   $t0, 0($sp)   # Guardar el quinto par√°metro en la pila
 
 
-    jal suma            # Llamar a la funciÛn suma
-    			# La direcciÛn de la siguiente instrucciÛn se guarda autom·ticamente en '$ra'.
+    jal suma            # Llamar a la funci√≥n suma
+    			# La direcci√≥n de la siguiente instrucci√≥n se guarda autom√°ticamente en '$ra'.
 
 
     move $t1, $v0
@@ -52,8 +52,8 @@
 
 
 #--------------------------------------------------------------
-# FunciÛn suma:
-# Recibe 5 par·metros (4 en registros, 1 en la pila).
+# Funci√≥n suma:
+# Recibe 5 par√°metros (4 en registros, 1 en la pila).
 # Retorna la suma de los 5 valores en $v0.
 #--------------------------------------------------------------
 
@@ -61,7 +61,8 @@ suma:
 
     # Reservar espacio en la pila y guardar registros
     addi $sp, $sp, -12     # Reservar espacio para $ra, $s0 y $s1
-    sw   $ra, 0($sp)       # Guardar la direcciÛn de retorno
+    sw   $ra, 0($sp)       # Guardar la direcci√≥n de retorno.  Si no realizas m√°s llamadas a subrutinas dentro de la subrutina suma, entonces no necesitas guardar el valor de $ra porque no se sobrescribir√°.
+                           # En este caso no es necesario, pero sirve como ejemplo.
     sw   $s0, 4($sp)       # Guardar $s0
     sw   $s1, 8($sp)       # Guardar $s1
 
@@ -73,23 +74,23 @@ suma:
 
 
 
-    # Recuperar el quinto par·metro desde la pila
-    lw   $t0, 12($sp)      # AquÌ estaba el quinto par·metro
+    # Recuperar el quinto par√°metro desde la pila
+    lw   $t0, 12($sp)      # Aqu√≠ estaba el quinto par√°metro
     
-    # Al reservar 12 de espacio para $ra, $s0 y $s1, el quinto parametro, pasÛ a estar a 12 bytes de la nueva direcciÛn de $sp.
+    # Al reservar 12 de espacio para $ra, $s0 y $s1, el quinto parametro, pas√≥ a estar a 12 bytes de la nueva direcci√≥n de $sp.
     
     add  $v0, $v0, $t0     # $v0 = (a + b + c + d) + e
 
 
 
     # Restaurar los registros antes de regresar
-    lw   $ra, 0($sp)       # Recuperar la direcciÛn de retorno
+    lw   $ra, 0($sp)       # Recuperar la direcci√≥n de retorno
     lw   $s0, 4($sp)       # Recuperar el valor de $s0
     lw   $s1, 8($sp)       # Recuperar el valor de $s1
     addi $sp, $sp, 12      # Liberar espacio en la pila
 
 
-    jr   $ra               # Regresar a la instrucciÛn que sigue despuÈs de 'jal suma'
+    jr   $ra               # Regresar a la instrucci√≥n que sigue despu√©s de 'jal suma'
 
 
 
