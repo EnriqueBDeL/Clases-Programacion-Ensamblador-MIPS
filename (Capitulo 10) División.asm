@@ -5,15 +5,15 @@ mensajeR: .asciiz "\nResto: "
 
 .text 
 
-#División:
+#DivisiÃ³n:
 
 li $s1, 10
 li $s2, 2
 
 div $s1, $s2 # 10 / 2 --> Cociente: 5 | Resto: 0
 
-mflo $t0 # LO: cociente (resultado de la división entera)
-mfhi $t1 # HI: residuo (módulo o resto)
+mflo $t0 # LO (32 bits): cociente (resultado de la divisiÃ³n entera)
+mfhi $t1 # HI (32 bits): residuo (mÃ³dulo o resto)
 
 
 
