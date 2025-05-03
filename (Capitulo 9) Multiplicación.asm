@@ -17,13 +17,13 @@ mult $s1, $s2 # 2 x 4 = 8
 
 
 
-#--------------------------------------------------|
+#------------------------------------------------------------------------------|
 # El resultado son 64 bits.
 
 # El resultado se guarda en dos registros:
-#   HI(Parte alta del resultado): contiene los 32 bits más significativos.
+#   HI(Parte alta del resultado): contiene los 32 bits mÃ¡s significativos.
 #   LO(Parte baja del resultado): contiene los 32 bits menos significativos.
-#--------------------------------------------------|
+#------------------------------------------------------------------------------|
 
 
 
@@ -52,7 +52,7 @@ li $s1, 123456
 li $s2, 987654
 
 
-mult $s1, $s2 # 123456 × 987654 = 121931812224
+mult $s1, $s2 # 123456 Ã— 987654 = 121931812224
 
 
 # 121931812224 = 0x1C62E9A580
